@@ -1,5 +1,5 @@
 {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "summary": "Human readable debugging functions",
     "repository": "https://github.com/panosoft/elm-debugf.git",
     "license": "BSD3",
@@ -10,6 +10,8 @@
     "exposed-modules": [
         "DebugF"
     ],
-    "dependencies": {},
+    "dependencies": {
+		"elm-lang/core": "4.0.5 <= v < 5.0.0"
+	},
     "elm-version": "0.17.1 <= v < 0.18.0"
 }

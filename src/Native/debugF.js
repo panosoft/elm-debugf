@@ -1,4 +1,4 @@
-var _user$project$Native_DebugF = function() {
+var _panosoft$elm_debugf$Native_DebugF = function() {
 	function toStringF(v)
 	{
 		var objectsEncountered = [];
