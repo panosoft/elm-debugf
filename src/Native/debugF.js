@@ -67,7 +67,7 @@ var _panosoft$elm_debugf$Native_DebugF = function() {
 
 			if (type === 'number')
 			{
-				return v;
+				return String(v);
 			}
 
 			if (v instanceof String)
