@@ -1,5 +1,5 @@
 {
-    "version": "1.0.2",
+    "version": "1.0.3",
     "summary": "Human readable debugging functions",
     "repository": "https://github.com/panosoft/elm-debugf.git",
     "license": "BSD3",
