@@ -200,17 +200,20 @@ var _panosoft$elm_debugf$Native_DebugF = function() {
 		return toString2(v, 1);
 	}
 	function log(tag, value)
-	{
-		var msg = '\n-------------------------' + tag + '-------------------------\n\n' + toStringF(value) + '\n';
-		if (process && process.stdout)
-			process.stdout.write(msg);
-		else
-			console.log(msg);
-		return value;
-	}
-
-	return {
-		toStringF: toStringF,
-		log: F2(log)
-	}
+    {
+        var msg;
+        if (typeof value == 'string' || value instanceof String)
+            msg = value + '\n';
+        else
+            msg = '\n-------------------------' + tag + '-------------------------\n\n' + toStringF(value) + '\n';
+        if (process && process.stdout)
+            process.stdout.write(msg);
+        else
+            console.log(msg);
+        return value;
+    }
+    return {
+        toStringF: toStringF,
+        log: F2(log)
+    }
 }();
