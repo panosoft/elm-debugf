@@ -203,7 +203,7 @@ var _panosoft$elm_debugf$Native_DebugF = function() {
     {
         var msg;
         if (typeof value == 'string' || value instanceof String)
-            msg = tag ': ' + value + '\n';
+            msg = tag + ': ' + value + '\n';
         else
             msg = '\n-------------------------' + tag + '-------------------------\n\n' + toStringF(value) + '\n';
         if (process && process.stdout)
