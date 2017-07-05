@@ -2,7 +2,7 @@ port module Test.App exposing (..)
 
 import Platform
 import Dict exposing (Dict)
-import DebugF
+import DebugF exposing (Color(..), toStringF)
 import Json.Decode
 
 
@@ -37,6 +37,58 @@ init =
                 }
     in
         {} ! [ exitApp 0 ]
+
+
+type alias Stuff =
+    { string : String
+    , more : MoreStuff
+    , num : Int
+    }
+
+
+type alias MoreStuff =
+    { anotherString : String
+    , anotherNum : Int
+    }
+
+
+stuff : Stuff
+stuff =
+    { string = "stuff\n"
+    , more = moreStuff
+    , num = 1
+    }
+
+
+moreStuff : MoreStuff
+moreStuff =
+    { anotherString = "more\nstuff"
+    , anotherNum = 100
+    }
+
+
+test : String
+test =
+    let
+        fc =
+            DebugF.logFC Red Black "stuff" <| "prefix: " ++ (toStringF stuff)
+
+        c =
+            DebugF.logC Black Yellow "moreStuff" moreStuff
+
+        ff =
+            DebugF.log "stuff" <| "prefix: " ++ (toStringF stuff)
+
+        f =
+            DebugF.log "moreStuff" moreStuff
+
+        ll =
+            Debug.log "stuff" <| "prefix: " ++ (toString stuff)
+
+        l =
+            Debug.log "moreStuff" moreStuff
+    in
+        ""
 
 
 main : Program Never Model Msg

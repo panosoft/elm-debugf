@@ -1,5 +1,5 @@
 {
-    "version": "2.0.0",
+    "version": "2.1.0",
     "summary": "Human readable debugging functions",
     "repository": "https://github.com/panosoft/elm-debugf.git",
     "license": "Unlicense",
@@ -11,7 +11,8 @@
         "DebugF"
     ],
     "dependencies": {
-		"elm-lang/core": "5.0.0 <= v < 6.0.0"
+		"elm-lang/core": "5.0.0 <= v < 6.0.0",
+		"panosoft/elm-string-utils": "2.0.0 <= v < 3.0.0"
 	},
     "elm-version": "0.18.0 <= v < 0.19.0"
 }

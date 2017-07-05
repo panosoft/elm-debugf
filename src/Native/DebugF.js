@@ -199,21 +199,27 @@ var _panosoft$elm_debugf$Native_DebugF = function() {
 		};
 		return toString2(v, 1);
 	}
-	function log(tag, value)
+	function logC(prefix, tag, value, suffix)
     {
         var msg;
         if (typeof value == 'string' || value instanceof String)
             msg = tag + ': ' + value + '\n';
         else
             msg = '\n-------------------------' + tag + '-------------------------\n\n' + toStringF(value) + '\n';
+		msg = prefix + msg + suffix;
         if (process && process.stdout)
             process.stdout.write(msg);
         else
             console.log(msg);
         return value;
     }
+	function log(tag, value)
+    {
+		return logC('', tag, value, '');
+	}
     return {
         toStringF: toStringF,
-        log: F2(log)
+        log: F2(log),
+		logC: F4(logC)
     }
 }();

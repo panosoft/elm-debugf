@@ -40,6 +40,12 @@ moreStuff =
 test : String
 test =
     let
+		fc =
+			DebugF.logFC Red Black "stuff" <| "prefix: " ++ (toStringF stuff)
+
+		c =
+			DebugF.logC Black Yellow "moreStuff" moreStuff
+
         ff =
             DebugF.log "stuff" <| "prefix: " ++ (toStringF stuff)
 
@@ -51,11 +57,14 @@ test =
 
         l =
             Debug.log "moreStuff" moreStuff
+
     in
         ""
 ```
 
-Produces the following output, first the Elm Debug output then this library's output:
+Produces the following output, first the Elm Debug output then this library's output and finally in color (terminal output only otherwise will have embedded ANSI escape sequences):
+
+Notice that when DebugF gets a string it prints it more simply.
 
 ```
 moreStuff: { anotherString = "more", anotherNum = 100 }
@@ -68,18 +77,24 @@ stuff: "prefix: { string = \"stuff\", more = { anotherString = \"more\", another
   anotherNum = 100
 }
 
--------------------------stuff-------------------------
-
-"  prefix: {
-    string = "stuff",
-    more = {
-      anotherString = "more",
-      anotherNum = 100
-    },
-    num = 1
-  }"
+stuff: prefix: {
+  string = "stuff",
+  more = {
+    anotherString = "more",
+    anotherNum = 100
+  },
+  num = 1
+}
 ```
-
-## Warning
-
-This library is still in alpha.
+<code>
+<span style="color:black;background-color:yellow">moreStuff: { anotherString = "more", anotherNum = 100 }<br>
+<span style="color:red;background-color:black"><br>
+stuff: prefix: {<br>
+&nbsp;string = "stuff",<br>
+&nbsp;more = {<br>
+&nbsp;&nbsp;anotherString = "more",<br>
+&nbsp;&nbsp;anotherNum = 100<br>
+&nbsp;},<br>
+&nbsp;num = 1<br>
+}<br>
+<\code>
