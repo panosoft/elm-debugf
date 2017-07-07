@@ -54,6 +54,7 @@ ansiColor fg bg =
 logC : Color -> Color -> String -> a -> a
 logC fg bg prefix object =
     Native.DebugF.logC (ansiColor fg bg) prefix (cleanElmString <| toString object) "\x1B[0m"
+        |> always object
 
 
 {-| DebugF.log in color

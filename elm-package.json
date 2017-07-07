@@ -1,5 +1,5 @@
 {
-    "version": "2.1.0",
+    "version": "2.1.1",
     "summary": "Human readable debugging functions",
     "repository": "https://github.com/panosoft/elm-debugf.git",
     "license": "Unlicense",
